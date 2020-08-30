@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  // const [starships, setStarships] = useState([]);
+  const [starships, setStarships] = useState([]);
+ 
   const [ship, setShip] = useState([]);
 
   // useEffect(() => {
@@ -15,7 +16,6 @@ function App() {
   //   fetchData();
   // }, []);
   const ship_id = [3,10,11,12,15,21,22,23];
-  const arr = [];
   useEffect(() => {
     async function fetchShips() {
       ship_id.map(async (item) => {
@@ -26,7 +26,7 @@ function App() {
     }
     fetchShips();
   }, []);
-  // console.log(ship);
+  console.log(ship);
   return (
     <div className="App">
       <div className="container">
