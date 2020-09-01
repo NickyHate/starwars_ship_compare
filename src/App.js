@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       .then((texts) => {
         return texts
       }).then( (result) => {
-        setShip(result)
+        return setShip(result)
       })
   };
 
