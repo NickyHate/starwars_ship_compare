@@ -19,13 +19,17 @@ function App() {
     Promise.all(starships.map((item) => fetch(item)))
       .then((responses) => Promise.all(responses.map((res) => res.json())))
       .then((texts) => {
-        console.log(texts)
+        return texts
+      }).then( (result) => {
+        setShip(result)
       })
   };
 
   useEffect(() => {
     fetchShips();
-  });
+  }, []);
+
+  console.log(ship)
 
   return (
     <div className="App">
